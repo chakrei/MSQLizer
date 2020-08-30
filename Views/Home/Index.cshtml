@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    th, td {
+        text-align: center;
+    }
+
+    .margin-top-40px {
+        margin-top: 40px;
+    }
+
+    .custab {
+        border: 1px solid #ccc;
+        padding: 5px;
+        margin: 2% 0;
+        box-shadow: 3px 3px 2px #ccc;
+        transition: 0.5s;
+    }
+
+        .custab:hover {
+            box-shadow: 3px 3px 0px transparent;
+            transition: 0.5s;
+        }
+</style>
+
+<div class="container">
+    <div class="row margin-top-40px"></div>
+</div>
+<div class="row pull-right">
+    <a class="github-button" href="https://github.com/chakrei/msqlizer/subscription" data-size="large" data-show-count="true" aria-label="Watch chakrei/msqlizer on GitHub">Watch</a>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong>Upload File</strong></div>
+                    <div class="panel-body">
+
+                        <!-- Standar Form -->
+                        <h4>Browse from computer</h4>
+
+                        <div class="form-inline">
+                            <div class="form-group">
+                                <input type="file" name="files" accept=".xls,.xlsx">
+                            </div>
+                            <button type="button" class="btn btn-sm btn-primary" id="upload">Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Select Sheet</label>
+                    <br />
+                    <input type="checkbox" id="chkfirstRow" />&nbsp; <label for="chkfirstRow">Consider first row as Column names</label>
+                    <select class="form-control">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Select Columns to import and respective data types</label>
+                    <table class="table table-striped custab">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Column Name</th>
+                                <th>Data Type</th>
+                                <th>Extra Info</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12">
+                <div class="col-sm-3">
+                    <label>*Table Name</label>
+                    <input type="text" class="form-control" placeholder="Table Name" />
+                </div>
+                <div class="col-sm-3">
+                    <label>Server Instance</label>
+                    <input type="text" class="form-control" placeholder="IP/Instance Name" />
+                </div>
+                <div class="col-sm-3">
+                    <label>Initial Catalog</label>
+                    <input type="text" class="form-control" placeholder="Database Name" />
+                </div>
+                <div class="col-sm-3">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Database password" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row margin-top-40px"></div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="col-md-12 basebtn">
+                <div class="col-sm-3"><button class="btn btn-md btn-primary" type="button">Upload to DB</button></div>
+                <div class="col-sm-3"><button class="btn btn-md btn-primary" type="button">Download scripts</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/landingpage")
+}
